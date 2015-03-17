@@ -9,9 +9,9 @@ namespace MvcMovie.Controllers
     public class HelloWorldController : Controller
     {
         // GET: HelloWorld
-        public string Index()
+        public ActionResult Index()
         {
-            return "This is index action.";
+            return View();
         }
 
         public string HelloWorld()
@@ -19,9 +19,11 @@ namespace MvcMovie.Controllers
             return "This is hello world action.";
         }
 
-        public string Welcome(string name, int id = 1)
+        public ActionResult Welcome(string name, int numTimes = 1)
         {
-            return HttpUtility.HtmlEncode(string.Format("Hello {0}, numTimes is {1}", name, id));
+            ViewBag.Message = "Hello" + name;
+            ViewBag.NumTimes = numTimes;
+            return View();
         }
     }
 }

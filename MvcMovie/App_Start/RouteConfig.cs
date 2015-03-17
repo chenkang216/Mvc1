@@ -21,7 +21,7 @@ namespace MvcMovie
 
             routes.MapRoute(
                 name: "HelloWorld",
-                url: "{controller}/{action}/{name}/{id}"
+                url: "{controller}/{action}/{name}/{numTimes}"
             );
         }
     }
